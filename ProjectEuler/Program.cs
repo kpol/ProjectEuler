@@ -1,4 +1,7 @@
-﻿using ProjectEuler.Problems;
+﻿using System;
+using System.Linq;
+using ProjectEuler.Common;
+using ProjectEuler.Problems;
 
 namespace ProjectEuler
 {
@@ -6,7 +9,10 @@ namespace ProjectEuler
     {
         public static void Main(string[] args)
         {
-            Problem025.Run();
+
+            var primes = Prime.GetPrimeNumbers(100).ToArray();
+
+
         }
     }
 }
