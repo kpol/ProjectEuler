@@ -4,9 +4,9 @@ using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
-    public static class Problem025
+    public class Problem025 : Problem
     {
-        public static void Run()
+        public override void Run()
         {
             // The Fibonacci sequence is defined by the recurrence relation:
 

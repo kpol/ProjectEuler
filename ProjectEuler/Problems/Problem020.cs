@@ -4,9 +4,9 @@ using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
-    public static class Problem020
+    public class Problem020 : Problem
     {
-        public static void Run()
+        public override void Run()
         {
             // n!means n × (n − 1) × ... × 3 × 2 × 1
 

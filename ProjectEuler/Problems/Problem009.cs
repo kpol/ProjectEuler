@@ -2,9 +2,9 @@
 
 namespace ProjectEuler.Problems
 {
-    public static class Problem009
+    public class Problem009 : Problem
     {
-        public static void Run()
+        public override void Run()
         {
             // A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
             // a^2 + b^2 = c^2

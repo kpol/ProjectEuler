@@ -49,6 +49,7 @@
     <Compile Include="Common\Fibonacci.cs" />
     <Compile Include="Common\Prime.cs" />
     <Compile Include="Common\TriangleNumbers.cs" />
+    <Compile Include="Problems\Problem.cs" />
     <Compile Include="Problems\Problem001.cs" />
     <Compile Include="Problems\Problem010.cs" />
     <Compile Include="Problems\Problem002.cs" />

@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace ProjectEuler.Problems
 {
-    public static class Problem004
+    public class Problem004 : Problem
     {
-        public static void Run()
+        public override void Run()
         {
             // A palindromic number reads the same both ways. The largest palindrome made from the product of two 2 - digit numbers is 9009 = 91 × 99.
             // Find the largest palindrome made from the product of two 3 - digit numbers.

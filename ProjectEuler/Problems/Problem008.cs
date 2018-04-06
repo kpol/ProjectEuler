@@ -2,9 +2,9 @@
 
 namespace ProjectEuler.Problems
 {
-    public static class Problem008
+    public class Problem008 : Problem
     {
-        public static void Run()
+        public override void Run()
         {
             //73167176531330624919225119674426574742355349194934
             //96983520312774506326239578318016984801869478851843

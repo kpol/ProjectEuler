@@ -2,9 +2,9 @@
 
 namespace ProjectEuler.Problems
 {
-    public static class Problem019
+    public class Problem019 : Problem
     {
-        public static void Run()
+        public override void Run()
         {
             // How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 

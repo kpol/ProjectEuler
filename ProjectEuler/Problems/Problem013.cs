@@ -4,9 +4,9 @@ using System.Numerics;
 
 namespace ProjectEuler.Problems
 {
-    public static class Problem013
+    public class Problem013 : Problem
     {
-        public static void Run()
+        public override void Run()
         {
             // Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
 

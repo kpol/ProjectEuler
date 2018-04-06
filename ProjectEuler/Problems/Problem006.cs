@@ -2,9 +2,9 @@
 
 namespace ProjectEuler.Problems
 {
-    public static class Problem006
+    public class Problem006 : Problem
     {
-        public static void Run()
+        public override void Run()
         {
             // The sum of the squares of the first ten natural numbers is,
             // 1^2 + 2^2 + ... + 10^2 = 385
