@@ -1,4 +1,5 @@
-﻿using ProjectEuler.Problems;
+﻿using System;
+using ProjectEuler.Problems;
 
 namespace ProjectEuler
 {
@@ -6,7 +7,7 @@ namespace ProjectEuler
     {
         public static void Main(string[] args)
         {
-            new Problem046().Run();
+            new Problem022().Run();
         }
     }
 }
