@@ -30,31 +30,31 @@ namespace ProjectEuler.Problems
                 {
                     var pr = primes.TakeWhile(p => p < i).ToList();
 
-                    bool canBeWriten = false;
+                    var canBeWritten = false;
 
                     foreach (var p in pr)
                     {
                         var x = i - p;
 
-                        if (x % 2 != 0)
+                        if (x % 2 == 0)
                         {
-                            continue;
-                        }
+                            var z = x / 2;
 
-                        var z = x / 2;
+                            var sqrt = (ulong)Math.Sqrt(z);
 
-                        var sqrt = (ulong)Math.Sqrt(z);
+                            if (sqrt * sqrt == z)
+                            {
+                                canBeWritten = true;
 
-                        if (sqrt * sqrt == z)
-                        {
-                            canBeWriten = true;
-                            break;
+                                break;
+                            }
                         }
                     }
 
-                    if (!canBeWriten)
+                    if (!canBeWritten)
                     {
                         Console.WriteLine(i);
+
                         break;
                     }
                 }
