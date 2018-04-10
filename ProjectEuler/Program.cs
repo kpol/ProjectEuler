@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using ProjectEuler.Common;
-using ProjectEuler.Problems;
+﻿using ProjectEuler.Problems;
 
 namespace ProjectEuler
 {
@@ -11,7 +6,7 @@ namespace ProjectEuler
     {
         public static void Main(string[] args)
         {
-            new Problem036().Run();
+            new Problem046().Run();
         }
     }
 }
