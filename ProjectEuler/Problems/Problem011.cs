@@ -5,9 +5,7 @@ namespace ProjectEuler.Problems
 {
     public class Problem011 : Problem
     {
-        // TODO
         // What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
-
         private const int MatrixSize = 20;
 
         public override void Run()
