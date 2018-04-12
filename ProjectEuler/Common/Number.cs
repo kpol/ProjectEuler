@@ -100,5 +100,10 @@ namespace ProjectEuler.Common
                 n /= 10;
             }
         }
+
+        public static int GetMax(int number1, int number2)
+        {
+            return number1 >= number2 ? number1 : number2;
+        }
     }
 }

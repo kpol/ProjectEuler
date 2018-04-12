@@ -1,4 +1,5 @@
 ﻿using System;
+using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
@@ -7,47 +8,50 @@ namespace ProjectEuler.Problems
         // TODO
         // What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
+        private const int MatrixSize = 20;
+
         public override void Run()
         {
             var matrix = GetMatrix();
             const int numbersCount = 4;
 
-            var sum = 0;
+            var greatestProduct = 0;
 
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    
+                    // horizontally
+                    if (j <= MatrixSize - numbersCount)
+                    {
+                        var product = matrix[i, j] * matrix[i, j + 1] * matrix[i, j + 2] * matrix[i, j + 3];
+                        greatestProduct = Number.GetMax(greatestProduct, product);
+                    }
+
+                    // vertically
+                    if (i <= MatrixSize - numbersCount)
+                    {
+                        var product = matrix[i, j] * matrix[i + 1, j] * matrix[i + 2, j] * matrix[i + 3, j];
+                        greatestProduct = Number.GetMax(greatestProduct, product);
+                    }
+
+                    // diagonally \
+                    if (i <= MatrixSize - numbersCount && j <= MatrixSize - numbersCount)
+                    {
+                        var product = matrix[i, j] * matrix[i + 1, j + 1] * matrix[i + 2, j + 2] * matrix[i + 3, j + 3];
+                        greatestProduct = Number.GetMax(greatestProduct, product);
+                    }
+
+                    // diagonally /
+                    if (i <= MatrixSize - numbersCount && j >= numbersCount - 1)
+                    {
+                        var product = matrix[i, j] * matrix[i + 1, j - 1] * matrix[i + 2, j - 2] * matrix[i + 3, j - 3];
+                        greatestProduct = Number.GetMax(greatestProduct, product);
+                    }
                 }
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            Console.WriteLine(greatestProduct);
         }
 
         private static int[,] GetMatrix()
@@ -74,7 +78,7 @@ namespace ProjectEuler.Problems
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
 
-            var matrix = new int[20, 20];
+            var matrix = new int[MatrixSize, MatrixSize];
 
             var rows = matrixString.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
