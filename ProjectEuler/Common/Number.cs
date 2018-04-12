@@ -2,15 +2,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 namespace ProjectEuler.Common
 {
     public static class Number
     {
-        public static ulong RotateInteger(ulong number)
+        public static ulong RotateRight(ulong number)
         {
             var digits = (ulong)Math.Log10(number);
             var factor = (ulong)Math.Pow(10, digits);
+
+            return number / 10 + factor * (number % 10);
+        }
+
+        public static BigInteger RotateRight(BigInteger number)
+        {
+            var digits = BigInteger.Log10(number);
+            var factor = BigInteger.Pow(10, (int)digits);
 
             return number / 10 + factor * (number % 10);
         }
@@ -22,13 +31,13 @@ namespace ProjectEuler.Common
                 yield return number;
             }
 
-            var n = RotateInteger(number);
+            var n = RotateRight(number);
 
             while (n != number)
             {
                 yield return n;
 
-                n = RotateInteger(n);
+                n = RotateRight(n);
             }
         }
 
