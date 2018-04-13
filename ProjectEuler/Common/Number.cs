@@ -101,6 +101,32 @@ namespace ProjectEuler.Common
             }
         }
 
+        public static IEnumerable<int> GetDivisors(int number)
+        {
+            yield return 1;
+
+            if (number % 2 == 0) // even
+            {
+                for (int i = 2; i <= number / 2; i++)
+                {
+                    if (number % i == 0)
+                    {
+                        yield return i;
+                    }
+                }
+            }
+            else // odd
+            {
+                for (int i = 3; i <= number / 3; i += 2)
+                {
+                    if (number % i == 0)
+                    {
+                        yield return i;
+                    }
+                }
+            }
+        }
+
         public static int GetMax(int number1, int number2)
         {
             return number1 >= number2 ? number1 : number2;
