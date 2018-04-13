@@ -12,7 +12,7 @@ namespace ProjectEuler
     {
         public static void Main(string[] args)
         {
-            new Problem023().Run();
+            Console.WriteLine(Number.TruncateLeft(345));
         }
     }
 }

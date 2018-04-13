@@ -131,5 +131,30 @@ namespace ProjectEuler.Common
         {
             return number1 >= number2 ? number1 : number2;
         }
+
+        public static ulong TruncateLeft(ulong number)
+        {
+            if (number < 10)
+            {
+                return number;
+            }
+
+            var digits = (ulong)Math.Log10(number);
+            var factor = (ulong)Math.Pow(10, digits);
+
+            return number % factor;
+        }
+
+        public static ulong TruncateRight(ulong number)
+        {
+            if (number < 10)
+            {
+                return number;
+            }
+
+            var mod = number % 10;
+
+            return (number - mod) / 10;
+        }
     }
 }
