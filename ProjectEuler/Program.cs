@@ -13,7 +13,7 @@ namespace ProjectEuler
     {
         public static void Main(string[] args)
         {
-            new Problem021().Run();
+           
         }
     }
 }
