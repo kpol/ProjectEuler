@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
@@ -25,8 +26,7 @@ namespace ProjectEuler.Problems
 
             foreach (var triangleNumber in TriangleNumbers.GetTriangleNumbers(uint.MaxValue))
             {
-                var numberOfFactors = Factor.GetFactorsCount(triangleNumber);
-                //Console.WriteLine(numberOfFactors);
+                var numberOfFactors = Number.GetDivisors(triangleNumber, false).Count();
 
                 if (numberOfFactors > 500)
                 {

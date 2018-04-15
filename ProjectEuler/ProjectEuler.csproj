@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\Factor.cs" />
+    <Compile Include="Common\EnumerableExtensions.cs" />
     <Compile Include="Common\Factorial.cs" />
     <Compile Include="Common\Fibonacci.cs" />
     <Compile Include="Common\Number.cs" />
