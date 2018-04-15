@@ -11,12 +11,11 @@ namespace ProjectEuler
 {
     public class Program
     {
+        private const int Max = 1000000;
+
         public static void Main(string[] args)
         {
-            foreach (var i in Prime.GetPrimeFactors(81))
-            {
-                Console.WriteLine(i);
-            }
+
         }
     }
 }

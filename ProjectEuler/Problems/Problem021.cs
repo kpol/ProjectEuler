@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
@@ -12,9 +13,9 @@ namespace ProjectEuler.Problems
 
         public override void Run()
         {
-            ulong sum = 0;
+            long sum = 0;
 
-            for (ulong i = 0; i < 10000; i++)
+            for (long i = 0; i < 10000; i++)
             {
                 var a = Number.GetDivisors(i).Sum();
                 var b = Number.GetDivisors(a).Sum();

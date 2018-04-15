@@ -107,13 +107,13 @@ namespace ProjectEuler.Common
         /// <param name="number"></param>
         /// <param name="onlyProperDivisors">A proper divisor of a positive integer is any divisor of other than itself.</param>
         /// <returns></returns>
-        public static IEnumerable<ulong> GetDivisors(ulong number, bool onlyProperDivisors = true)
+        public static IEnumerable<long> GetDivisors(long number, bool onlyProperDivisors = true)
         {
-            var max = (ulong)Math.Sqrt(number);
+            var max = (long)Math.Sqrt(number);
 
             yield return 1;
 
-            for (ulong factor = 2; factor <= max; factor++)
+            for (long factor = 2; factor <= max; factor++)
             {
                 if (number % factor == 0)
                 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
@@ -13,11 +14,11 @@ namespace ProjectEuler.Problems
 
         public override void Run()
         {
-            var abundantNumbers = new SortedSet<ulong>();
+            var abundantNumbers = new SortedSet<long>();
 
             const int max = 28123;
 
-            for (ulong i = 1; i <= max; i++)
+            for (long i = 1; i <= max; i++)
             {
                 if (IsAbundant(i))
                 {
@@ -25,9 +26,9 @@ namespace ProjectEuler.Problems
                 }
             }
 
-            ulong sum = 0;
+            long sum = 0;
 
-            for (ulong i = 1; i <= max; i++)
+            for (long i = 1; i <= max; i++)
             {
                 if (!CanBeSumOfTwoAbundant(i, abundantNumbers))
                 {
@@ -44,7 +45,7 @@ namespace ProjectEuler.Problems
         /// <param name="number"></param>
         /// <param name="abundantNumbers">Sorted array.</param>
         /// <returns></returns>
-        private static bool CanBeSumOfTwoAbundant(ulong number, ICollection<ulong> abundantNumbers)
+        private static bool CanBeSumOfTwoAbundant(long number, ICollection<long> abundantNumbers)
         {
             foreach (var abundantNumber in abundantNumbers)
             {
@@ -64,7 +65,7 @@ namespace ProjectEuler.Problems
             return false;
         }
 
-        private static bool IsAbundant(ulong number)
+        private static bool IsAbundant(long number)
         {
             var sumAllDivisors = Number.GetDivisors(number).Sum();
 
