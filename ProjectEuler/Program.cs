@@ -13,7 +13,10 @@ namespace ProjectEuler
     {
         public static void Main(string[] args)
         {
-           
+            foreach (var i in Prime.GetPrimeFactors(81))
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }

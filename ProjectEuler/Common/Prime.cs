@@ -10,7 +10,7 @@ namespace ProjectEuler.Common
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
-        public static IEnumerable<ulong> PrimeFactors(ulong n)
+        public static IEnumerable<ulong> GetPrimeFactors(ulong n)
         {
             // Print the number of 2s that divide n
 
