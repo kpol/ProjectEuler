@@ -12,7 +12,14 @@ namespace ProjectEuler
     {
         public static void Main(string[] args)
         {
-            new Problem039().Run();
+            //foreach (var divisor in Number.GetDivisors2(17, false))
+            //{
+            //    Console.WriteLine(divisor);
+            //}
+
+            new Problem023().Run();
         }
     }
+
+    // 4179871
 }
