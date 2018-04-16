@@ -78,7 +78,7 @@ namespace ProjectEuler.Problems
 
             var matrix = new int[MatrixSize, MatrixSize];
 
-            var rows = matrixString.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            var rows = matrixString.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
             for (int i = 0; i < rows.Length; i++)
             {
