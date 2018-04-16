@@ -1,11 +1,10 @@
-﻿using System;
-using ProjectEuler.Common;
+﻿using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
-    public class Problem010 : Problem
+    public class Problem010 : Problem<ulong>
     {
-        public override void Run()
+        public override ulong Run()
         {
             // The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
             // Find the sum of all the primes below two million.
@@ -17,7 +16,7 @@ namespace ProjectEuler.Problems
                 result += prime;
             }
 
-            Console.WriteLine(result);
+            return result;
         }
     }
 }

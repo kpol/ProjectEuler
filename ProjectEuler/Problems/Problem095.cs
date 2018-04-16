@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
-    public class Problem095 : Problem
+    public class Problem095 : Problem<int>
     {
         // The proper divisors of a number are all the divisors excluding the number itself.For example, the proper divisors of 28 are 1, 2, 4, 7, and 14. As the sum of these divisors is equal to 28, we call it a perfect number.
         // Interestingly the sum of the proper divisors of 220 is 284 and the sum of the proper divisors of 284 is 220, forming a chain of two numbers. For this reason, 220 and 284 are called an amicable pair.
@@ -16,7 +15,7 @@ namespace ProjectEuler.Problems
 
         private const int Max = 1000000;
 
-        public override void Run()
+        public override int Run()
         {
             var current = new SmallestCount();
 
@@ -31,8 +30,7 @@ namespace ProjectEuler.Problems
                 }
             }
 
-            Console.WriteLine(current.Smallest);
-            Console.WriteLine(current.Count);
+            return current.Smallest;
         }
 
         private static SmallestCount GetSmallestAndCount(int number)

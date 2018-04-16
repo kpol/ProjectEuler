@@ -1,10 +1,9 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
-    public class Problem047 : Problem
+    public class Problem047 : Problem<ulong>
     {
         // The first two consecutive numbers to have two distinct prime factors are:
            
@@ -20,7 +19,7 @@ namespace ProjectEuler.Problems
         // Find the first four consecutive integers to have four distinct prime factors each.What is the first of these numbers?
 
 
-        public override void Run()
+        public override ulong Run()
         {
             for (ulong i = 100; i < ulong.MaxValue; i++)
             {
@@ -39,10 +38,11 @@ namespace ProjectEuler.Problems
 
                 if (found)
                 {
-                    Console.WriteLine(i);
-                    break;
+                    return i;
                 }
             }
+
+            return 0;
         }
     }
 }

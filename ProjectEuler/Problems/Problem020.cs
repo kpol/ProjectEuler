@@ -1,12 +1,11 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
-    public class Problem020 : Problem
+    public class Problem020 : Problem<int>
     {
-        public override void Run()
+        public override int Run()
         {
             // n!means n × (n − 1) × ... × 3 × 2 × 1
 
@@ -16,7 +15,7 @@ namespace ProjectEuler.Problems
 
             var result = Factorial.GetFactorial(100).ToString().Select(c => int.Parse(c.ToString())).Sum();
 
-            Console.WriteLine(result);
+            return result;
         }
     }
 }

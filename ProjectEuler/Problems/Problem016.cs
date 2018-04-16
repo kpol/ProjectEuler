@@ -1,15 +1,15 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Numerics;
 
 namespace ProjectEuler.Problems
 {
-    public class Problem016 : Problem
+    public class Problem016 : Problem<int>
     {
-        public override void Run()
+        public override int Run()
         {
             var result = BigInteger.Pow(new BigInteger(2), 1000).ToString().Select(c => int.Parse(c.ToString())).Sum();
-            Console.WriteLine(result);
+
+            return result;
         }
     }
 }

@@ -4,7 +4,7 @@ using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
-    public class Problem046 : Problem
+    public class Problem046 : Problem<ulong>
     {
         // It was proposed by Christian Goldbach that every odd composite number can be written as the sum of a prime and twice a square.
 
@@ -18,9 +18,9 @@ namespace ProjectEuler.Problems
         // It turns out that the conjecture was false.
         // What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
 
-        public override void Run()
+        public override ulong Run()
         {
-            ulong max = 1000000;
+            const ulong max = 1000000;
 
             var primes = Prime.GetPrimeNumbers(max).ToArray();
 
@@ -53,13 +53,12 @@ namespace ProjectEuler.Problems
 
                     if (!canBeWritten)
                     {
-                        Console.WriteLine(i);
-
-                        break;
+                        return i;
                     }
                 }
-
             }
+
+            return 0;
         }
     }
 }

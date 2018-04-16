@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace ProjectEuler.Problems
+﻿namespace ProjectEuler.Problems
 {
-    public class Problem039 : Problem
+    public class Problem039 : Problem<int>
     {
         // If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
         // {20,48,52}, {24,45,51}, {30,40,50}
         // For which value of p ≤ 1000, is the number of solutions maximised?
 
-        public override void Run()
+        public override int Run()
         {
             var pMax = 0;
             var maxCount = 0;
@@ -37,7 +35,7 @@ namespace ProjectEuler.Problems
                 }
             }
 
-            Console.WriteLine(pMax);
+            return pMax;
         }
     }
 }

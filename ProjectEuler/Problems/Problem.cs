@@ -1,7 +1,7 @@
 ﻿namespace ProjectEuler.Problems
 {
-    public abstract class Problem
+    public abstract class Problem<TResult>
     {
-        public abstract void Run();
+        public abstract TResult Run();
     }
 }

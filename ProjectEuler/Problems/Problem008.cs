@@ -2,9 +2,9 @@
 
 namespace ProjectEuler.Problems
 {
-    public class Problem008 : Problem
+    public class Problem008 : Problem<ulong>
     {
-        public override void Run()
+        public override ulong Run()
         {
             //73167176531330624919225119674426574742355349194934
             //96983520312774506326239578318016984801869478851843
@@ -74,7 +74,7 @@ namespace ProjectEuler.Problems
                 }
             }
 
-            Console.WriteLine(max);
+            return max;
         }
     }
 }

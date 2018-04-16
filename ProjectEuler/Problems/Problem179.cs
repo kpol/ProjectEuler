@@ -1,14 +1,13 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
-    public class Problem179 : Problem
+    public class Problem179 : Problem<int>
     {
         // Find the number of integers 1 < n < 10^7, for which n and n + 1 have the same number of positive divisors.For example, 14 has the positive divisors 1, 2, 7, 14 while 15 has 1, 3, 5, 15.
 
-        public override void Run()
+        public override int Run()
         {
             var n1 = Number.GetDivisors(2, false).Count();
 
@@ -26,7 +25,7 @@ namespace ProjectEuler.Problems
                 n1 = n2;
             }
 
-            Console.WriteLine(count);
+            return count;
         }
     }
 }

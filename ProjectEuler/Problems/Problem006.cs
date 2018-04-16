@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace ProjectEuler.Problems
+﻿namespace ProjectEuler.Problems
 {
-    public class Problem006 : Problem
+    public class Problem006 : Problem<ulong>
     {
-        public override void Run()
+        public override ulong Run()
         {
             // The sum of the squares of the first ten natural numbers is,
             // 1^2 + 2^2 + ... + 10^2 = 385
@@ -24,7 +22,7 @@ namespace ProjectEuler.Problems
 
             var result = sum * sum - sumOfSquares;
 
-            Console.WriteLine(result);
+            return result;
         }
     }
 }

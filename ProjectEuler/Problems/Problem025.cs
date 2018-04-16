@@ -1,12 +1,11 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
-    public class Problem025 : Problem
+    public class Problem025 : Problem<int>
     {
-        public override void Run()
+        public override int Run()
         {
             // The Fibonacci sequence is defined by the recurrence relation:
 
@@ -29,7 +28,8 @@ namespace ProjectEuler.Problems
             // What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
 
             var result = Fibonacci.GetFibonacciNumbers().Select((n, i) => new { n, i }).First(n => n.n.ToString().Length == 1000).i + 1;
-            Console.WriteLine(result);
+
+            return result;
         }
     }
 }

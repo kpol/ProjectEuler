@@ -3,12 +3,12 @@ using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
-    public class Problem011 : Problem
+    public class Problem011 : Problem<int>
     {
         // What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
         private const int MatrixSize = 20;
 
-        public override void Run()
+        public override int Run()
         {
             var matrix = GetMatrix();
             const int numbersCount = 4;
@@ -49,7 +49,7 @@ namespace ProjectEuler.Problems
                 }
             }
 
-            Console.WriteLine(greatestProduct);
+            return greatestProduct;
         }
 
         private static int[,] GetMatrix()

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjectEuler.Problems
 {
-    public class Problem014 : Problem
+    public class Problem014 : Problem<uint>
     {
         // The following iterative sequence is defined for the set of positive integers:
            
@@ -20,7 +19,7 @@ namespace ProjectEuler.Problems
            
         // NOTE: Once the chain starts the terms are allowed to go above one million.
 
-        public override void Run()
+        public override uint Run()
         {
             int maxCount = 0;
             uint number = 0;
@@ -36,7 +35,7 @@ namespace ProjectEuler.Problems
                 }
             }
 
-            Console.WriteLine(number);
+            return number;
         }
 
         private static IEnumerable<uint> GetChain(uint start)

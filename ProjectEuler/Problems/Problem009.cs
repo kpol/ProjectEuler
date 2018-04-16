@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace ProjectEuler.Problems
+﻿namespace ProjectEuler.Problems
 {
-    public class Problem009 : Problem
+    public class Problem009 : Problem<ulong>
     {
-        public override void Run()
+        public override ulong Run()
         {
             // A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
             // a^2 + b^2 = c^2
@@ -20,13 +18,12 @@ namespace ProjectEuler.Problems
 
                     if (a * a + b * b == c * c)
                     {
-                        Console.WriteLine(a * b * c);
-
-                        return;
+                        return a * b * c;
                     }
                 }
             }
 
+            return 0;
         }
     }
 }

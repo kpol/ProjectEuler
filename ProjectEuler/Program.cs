@@ -9,7 +9,7 @@ namespace ProjectEuler
     {
         public static void Main(string[] args)
         {
-            
+            Console.WriteLine(int.MaxValue);
         }
     }
 }
