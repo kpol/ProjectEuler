@@ -1,12 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Numerics;
+﻿using System.Numerics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProjectEuler.Problems;
 
 namespace ProjectEuler.Tests.Problems
 {
-    [Ignore]
     [TestClass]
     public class ProblemsTests
     {
@@ -206,67 +203,6 @@ namespace ProjectEuler.Tests.Problems
         public void Problem179()
         {
             Assert.AreEqual(986262, new Problem179().Run());
-        }
-    }
-
-    [TestClass]
-    public class T
-    {
-        private const string X = @"1
-2 3";
-
-        [TestMethod]
-        public void T1()
-        {
-            var lines = X.Split(new[] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries).ToArray();
-
-            Assert.AreEqual("1", lines[0]);
-            Assert.AreEqual("2 3", lines[1]);
-        }
-
-        [TestMethod]
-        public void T2()
-        {
-            var lines = X.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
-
-            Assert.AreEqual("1", lines[0]);
-            Assert.AreEqual("2 3", lines[1]);
-        }
-
-        [TestMethod]
-        public void T3()
-        {
-            var lines = X.Split(new[] { "\r" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
-
-            Assert.AreEqual("1", lines[0]);
-            Assert.AreEqual("2 3", lines[1]);
-        }
-
-        [TestMethod]
-        public void T4()
-        {
-            var lines = X.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
-
-            Assert.AreEqual("1", lines[0]);
-            Assert.AreEqual("2 3", lines[1]);
-        }
-
-        [TestMethod]
-        public void T5()
-        {
-            var lines = X.Split(new[] { "\r" }, StringSplitOptions.RemoveEmptyEntries).Select(s=>s.Trim()).ToArray();
-
-            Assert.AreEqual("1", lines[0]);
-            Assert.AreEqual("2 3", lines[1]);
-        }
-
-        [TestMethod]
-        public void T6()
-        {
-            var lines = X.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToArray();
-
-            Assert.AreEqual("1", lines[0]);
-            Assert.AreEqual("2 3", lines[1]);
         }
     }
 }

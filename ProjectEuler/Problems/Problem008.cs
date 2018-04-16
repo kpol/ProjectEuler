@@ -51,7 +51,7 @@ namespace ProjectEuler.Problems
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450";
 
-            var trim = number.Trim().Replace("\r\n", string.Empty);
+            var trim = number.Trim().Replace("\n", string.Empty).Replace("\r", string.Empty);
 
             const int length = 13;
 
