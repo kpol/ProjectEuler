@@ -9,8 +9,9 @@ namespace ProjectEuler.Common
         /// A function to print all prime factors of a given number <see cref="n"/>.
         /// </summary>
         /// <param name="n"></param>
+        /// <param name="includeDuplicates"></param>
         /// <returns></returns>
-        public static IEnumerable<ulong> GetPrimeFactors(ulong n)
+        public static IEnumerable<ulong> GetPrimeFactors(ulong n, bool includeDuplicates = false)
         {
             // Print the number of 2s that divide n
 
@@ -18,8 +19,15 @@ namespace ProjectEuler.Common
             {
                 yield return 2;
 
+                n /= 2;
+
                 while (n % 2 == 0)
                 {
+                    if (includeDuplicates)
+                    {
+                        yield return 2;
+                    }
+
                     n /= 2;
                 }
             }
@@ -32,8 +40,15 @@ namespace ProjectEuler.Common
                 {
                     yield return i;
 
+                    n /= i;
+
                     while (n % i == 0)
                     {
+                        if (includeDuplicates)
+                        {
+                            yield return i;
+                        }
+
                         n /= i;
                     }
                 }

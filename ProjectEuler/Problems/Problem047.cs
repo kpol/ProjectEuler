@@ -27,7 +27,7 @@ namespace ProjectEuler.Problems
 
                 for (ulong j = 0; j < 4; j++)
                 {
-                    var n = Prime.GetPrimeFactors(i + j).Distinct().Count();
+                    var n = Prime.GetPrimeFactors(i + j).Count();
 
                     if (n != 4)
                     {
