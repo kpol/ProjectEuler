@@ -9,7 +9,7 @@ namespace ProjectEuler
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(new Problem179().Run());
+            Console.WriteLine(new Problem017().Run());
         }
     }
 }
