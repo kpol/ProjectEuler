@@ -161,5 +161,41 @@ namespace ProjectEuler.Common
 
             return (number - mod) / 10;
         }
+
+        public static bool IsPandigital(long number)
+        {
+            if (number < 123456789)
+            {
+                return false;
+            }
+
+            var bitArray = new BitArray(9);
+            
+            while (number > 0)
+            {
+                var mod = number % 10;
+                number /= 10;
+
+                if (mod != 0)
+                {
+                    bitArray[(int)mod - 1] = true;
+                }
+            }
+
+            return bitArray.Cast<bool>().All(b => b);
+        }
+
+        public static long ConcatenateNumbers(params long[] numbers)
+        {
+            long result = 0;
+
+            foreach (var number in numbers)
+            {
+                var log = (int)Math.Ceiling(Math.Log10(number));
+                result = result * (int)Math.Pow(10, log) + number;
+            }
+
+            return result;
+        }
     }
 }
