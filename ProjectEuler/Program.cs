@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Diagnostics.Contracts;
+using System.Collections.Generic;
 using System.Linq;
 using ProjectEuler.Common;
-using ProjectEuler.Problems;
 
 namespace ProjectEuler
 {
@@ -11,7 +9,8 @@ namespace ProjectEuler
     {
         public static void Main(string[] args)
         {
- 
+            
+
         }
     }
 }
