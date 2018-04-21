@@ -11,7 +11,7 @@ namespace ProjectEuler.Problems
 
         public override int Run()
         {
-            var result = Enumerable.Range(1, 1000000 - 1).Where(n => Number.IsPalindromic((ulong)n) && Number.IsPalindrome(Number.GetBits(n).ToList()));
+            var result = Enumerable.Range(1, 1000000 - 1).Where(n => Number.IsPalindromic(n) && Number.IsPalindrome(Number.GetBits(n).ToList()));
 
             return result.Sum();
         }

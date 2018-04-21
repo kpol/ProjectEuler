@@ -41,7 +41,7 @@ namespace ProjectEuler.Common
             }
         }
 
-        public static bool IsPalindromic(ulong number)
+        public static bool IsPalindromic(long number)
         {
             var digits = GetAllDigits(number).ToList();
 
@@ -89,13 +89,13 @@ namespace ProjectEuler.Common
             return true;
         }
 
-        public static IEnumerable<ushort> GetAllDigits(ulong number)
+        public static IEnumerable<int> GetAllDigits(long number)
         {
             var n = number;
 
             while (n > 0)
             {
-                yield return (ushort)(n % 10);
+                yield return (int)(n % 10);
 
                 n /= 10;
             }
