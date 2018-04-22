@@ -12,11 +12,11 @@ namespace ProjectEuler.Problems
 
         public override ulong Run()
         {
-            var primes = Prime.GetPrimeNumbers((int)1e6 - 1).ToArray();
+            var primes = Prime.GetPrimeNumbersULong((int)1e6 - 1).ToList();
 
             int maxSequenceCount = 0;
             ulong pr = 0;
-            for (int i = primes.Length - 1; i > 0; i--)
+            for (int i = primes.Count - 1; i > 0; i--)
             {
                 var prime = primes[i];
 

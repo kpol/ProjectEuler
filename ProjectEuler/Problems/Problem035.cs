@@ -11,7 +11,7 @@ namespace ProjectEuler.Problems
             // There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
             // How many circular primes are there below one million?
 
-            var count = Prime.GetPrimeNumbers(1000000 - 1).Count(p => Number.GetAllRotations(p).All(Prime.IsPrime));
+            var count = Prime.GetPrimeNumbersULong(1000000 - 1).Count(p => Number.GetAllRotations(p).All(Prime.IsPrime));
 
             return count;
         }

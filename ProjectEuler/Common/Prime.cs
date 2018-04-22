@@ -62,25 +62,36 @@ namespace ProjectEuler.Common
             }
         }
 
-        public static IEnumerable<ulong> GetPrimeNumbers(ulong max)
+        public static IEnumerable<ulong> GetPrimeNumbersULong(ulong max)
         {
-            yield return 2;
-            yield return 3;
+            var arr = new ulong[max];
 
-            for (ulong i = 5; i <= max; i += 2)
+            for (ulong i = 2; i < max; i++)
             {
-                var found = true;
-
-                for (ulong j = 3; j <= Math.Sqrt(i); j += 2)
+                for (ulong j = i; j < max; j += i)
                 {
-                    if (i % j == 0)
-                    {
-                        found = false;
-                        break;
-                    }
+                    arr[j]++;
                 }
 
-                if (found)
+                if (arr[i] == 1)
+                {
+                    yield return i;
+                }
+            }
+        }
+
+        public static IEnumerable<int> GetPrimeNumbersInt(int max)
+        {
+            var arr = new int[max];
+
+            for (int i = 2; i < max; i++)
+            {
+                for (int j = i; j < max; j += i)
+                {
+                    arr[j]++;
+                }
+
+                if (arr[i] == 1)
                 {
                     yield return i;
                 }

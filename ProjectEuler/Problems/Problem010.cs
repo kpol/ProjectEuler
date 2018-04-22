@@ -11,7 +11,7 @@ namespace ProjectEuler.Problems
 
             ulong result = 0;
 
-            foreach (var prime in Prime.GetPrimeNumbers(2000000 - 1))
+            foreach (var prime in Prime.GetPrimeNumbersULong(2000000 - 1))
             {
                 result += prime;
             }

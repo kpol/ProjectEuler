@@ -12,7 +12,7 @@ namespace ProjectEuler.Problems
         
         public override ulong Run()
         {
-            var primes = Prime.GetPrimeNumbers(ulong.MaxValue).SkipWhile(n => n < 10);
+            var primes = Prime.GetPrimeNumbersULong(ulong.MaxValue).SkipWhile(n => n < 10);
 
             var count = 0;
 
