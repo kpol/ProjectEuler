@@ -22,7 +22,7 @@ namespace ProjectEuler.Problems
 
             var maxNumber = (int)Math.Sqrt(max) + 1;
 
-            var primes = Prime.GetPrimeNumbersULong((ulong)maxNumber).ToList();
+            var primes = Prime.GetPrimeNumbers((ulong)maxNumber).ToList();
 
             var set = new HashSet<int>();
 

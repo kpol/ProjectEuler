@@ -22,7 +22,7 @@ namespace ProjectEuler.Problems
         {
             const ulong max = 1000000;
 
-            var primes = Prime.GetPrimeNumbersULong(max).ToArray();
+            var primes = Prime.GetPrimeNumbers(max).ToArray();
 
             for (ulong i = 3; i < max; i += 2)
             {
