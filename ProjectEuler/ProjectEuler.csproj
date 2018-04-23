@@ -92,6 +92,7 @@
     <Compile Include="Problems\Problem097.cs" />
     <Compile Include="Problems\Problem099.cs" />
     <Compile Include="Problems\Problem179.cs" />
+    <Compile Include="Problems\Problem187.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
