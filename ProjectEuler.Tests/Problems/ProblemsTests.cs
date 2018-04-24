@@ -230,6 +230,12 @@ namespace ProjectEuler.Tests.Problems
         }
 
         [TestMethod]
+        public void Problem079()
+        {
+            Assert.AreEqual("73162890", new Problem079().Run());
+        }
+
+        [TestMethod]
         public void Problem087()
         {
             Assert.AreEqual(1097343, new Problem087().Run());
