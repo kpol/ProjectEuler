@@ -7,7 +7,7 @@ namespace ProjectEuler.Problems
     {
         // Find the maximum total from top to bottom of the triangle below:
 
-        private const string TriangleString = @"75
+        protected virtual string GetTriangleData => @"75
 95 64
 17 47 82
 18 35 87 10
@@ -25,7 +25,7 @@ namespace ProjectEuler.Problems
 
         public override int Run()
         {
-            var triangle = GetTriangle();
+            var triangle = GetTriangle(GetTriangleData);
 
             var length = triangle.GetLength(0);
 
@@ -42,9 +42,9 @@ namespace ProjectEuler.Problems
             return triangle[0, 0];
         }
 
-        private static int[,] GetTriangle()
+        private static int[,] GetTriangle(string dataTriangle)
         {
-            var lines = TriangleString.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var lines = dataTriangle.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
             var data = new int[lines.Length, lines.Length];
 
