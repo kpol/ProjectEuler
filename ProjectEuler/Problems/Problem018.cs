@@ -1,13 +1,13 @@
 ﻿using System;
+using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
-    // TODO
     public class Problem018 : Problem<int>
     {
-        public override int Run()
-        {
-            const string triangleString = @"75
+        // Find the maximum total from top to bottom of the triangle below:
+
+        private const string TriangleString = @"75
 95 64
 17 47 82
 18 35 87 10
@@ -23,7 +23,28 @@ namespace ProjectEuler.Problems
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23";
 
-            var lines = triangleString.Split(new[] {'\n'}, StringSplitOptions.RemoveEmptyEntries);
+        public override int Run()
+        {
+            var triangle = GetTriangle();
+
+            var length = triangle.GetLength(0);
+
+            // divide and conquer
+
+            for (int i = length - 2; i >= 0; i--)
+            {
+                for (int j = 0; j <= i; j++)
+                {
+                    triangle[i, j] += Number.GetMax(triangle[i + 1, j], triangle[i + 1, j + 1]);
+                }
+            }
+
+            return triangle[0, 0];
+        }
+
+        private static int[,] GetTriangle()
+        {
+            var lines = TriangleString.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
             var data = new int[lines.Length, lines.Length];
 
@@ -37,8 +58,7 @@ namespace ProjectEuler.Problems
                 }
             }
 
-
-            return 0;
+            return data;
         }
     }
 }
