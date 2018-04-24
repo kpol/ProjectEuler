@@ -52,6 +52,7 @@
     <Compile Include="Common\TriangleNumbers.cs" />
     <Compile Include="Problems\Problem030.cs" />
     <Compile Include="Problems\Problem044.cs" />
+    <Compile Include="Problems\Problem045.cs" />
     <Compile Include="Problems\Problem104.cs" />
     <Compile Include="Problems\Problem112.cs" />
     <Compile Include="Problems\Problem.cs" />
