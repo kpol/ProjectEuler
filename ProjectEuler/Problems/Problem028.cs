@@ -27,6 +27,12 @@
 
         private static int GetSum(int n)
         {
+            // top-right corner is n^2
+            // the top-left is n^2 - (n - 1)
+            // the bottom-left is top-left - (n - 1) = n^2 - 2n + 2
+            // the bottom-right is bottom-left - (n - 1) = n^2 - 3n + 3
+            // the sum of all corners is: 4n^2 - 6n + 6
+
             return 4 * n * n - 6 * n + 6;
         }
     }
