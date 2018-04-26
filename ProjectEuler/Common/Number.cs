@@ -178,13 +178,14 @@ namespace ProjectEuler.Common
             }
 
             long minNumber = 0;
+            long maxNumber = (long)Math.Pow(10, length);
 
             for (int i = 0; i < length; i++)
             {
                 minNumber += (i + 1) * (long)Math.Pow(10, length - i - 1);
             }
 
-            if (number < minNumber)
+            if (number < minNumber || number >= maxNumber)
             {
                 return false;
             }
