@@ -81,7 +81,7 @@ namespace ProjectEuler.Common
             }
         }
 
-        public static IEnumerable<ICollection<T>> GetAllPermutations<T>(this IEnumerable<T> source)
+        public static IEnumerable<IList<T>> GetAllPermutations<T>(this IEnumerable<T> source)
         {
             var result = source.ToList();
 
