@@ -31,7 +31,7 @@ namespace ProjectEuler.Problems
 
         private static int GetNumber(StringBuilder b, int index)
         {
-            return int.Parse(b[index - 1].ToString());
+            return b[index - 1] - '0';
         }
     }
 }
