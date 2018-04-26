@@ -162,14 +162,34 @@ namespace ProjectEuler.Common
             return (number - mod) / 10;
         }
 
-        public static bool IsPandigital(long number)
+        /// <summary>
+        /// We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once.
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        public static bool IsPandigital(long number, int length = 9)
         {
-            if (number < 123456789)
+            if (length > 9) throw new ArgumentOutOfRangeException(nameof(length));
+
+            if (length == 1)
+            {
+                return number == 1;
+            }
+
+            long minNumber = 0;
+
+            for (int i = 0; i < length; i++)
+            {
+                minNumber += (i + 1) * (long)Math.Pow(10, length - i - 1);
+            }
+
+            if (number < minNumber)
             {
                 return false;
             }
 
-            var bitArray = new BitArray(9);
+            var bitArray = new BitArray(length);
             
             while (number > 0)
             {
