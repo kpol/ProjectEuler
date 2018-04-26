@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectEuler.Common
 {
@@ -77,6 +78,47 @@ namespace ProjectEuler.Common
                 }
 
                 return min;
+            }
+        }
+
+        public static IEnumerable<ICollection<T>> GetAllPermutations<T>(this IEnumerable<T> source)
+        {
+            var result = source.ToList();
+
+            yield return result;
+
+            var copy = result.ToArray();
+            var c = new int[copy.Length];
+
+            int i = 0;
+
+            while (i < copy.Length)
+            {
+                if (c[i] < i)
+                {
+                    if (i % 2 == 0)
+                    {
+                        var a = copy[0];
+                        copy[0] = copy[i];
+                        copy[i] = a;
+                    }
+                    else
+                    {
+                        var a = copy[c[i]];
+                        copy[c[i]] = copy[i];
+                        copy[i] = a;
+                    }
+
+                    yield return copy.ToArray();
+
+                    c[i]++;
+                    i = 0;
+                }
+                else
+                {
+                    c[i] = 0;
+                    i++;
+                }
             }
         }
     }
