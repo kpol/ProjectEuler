@@ -66,6 +66,7 @@
     <Compile Include="Problems\Problem044.cs" />
     <Compile Include="Problems\Problem045.cs" />
     <Compile Include="Problems\Problem049.cs" />
+    <Compile Include="Problems\Problem059.cs" />
     <Compile Include="Problems\Problem067.cs" />
     <Compile Include="Problems\Problem079.cs" />
     <Compile Include="Problems\Problem104.cs" />
@@ -124,6 +125,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\p042_words.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\p059_cipher.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\p067_triangle.txt">
