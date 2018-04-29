@@ -24,7 +24,7 @@ namespace ProjectEuler.Problems
 
                 for (int j = i + 1; j < primes.Count - 1; j++)
                 {
-                    if (!Number.ArePermutations(primes[i], primes[j]))
+                    if (!Number.IsPermutation(primes[i], primes[j]))
                     {
                         continue;
                     }
@@ -33,7 +33,7 @@ namespace ProjectEuler.Problems
 
                     var n3 = primes[j] + diff;
 
-                    if (primes.BinarySearch(n3) >= 0 && Number.ArePermutations(primes[i], n3))
+                    if (primes.BinarySearch(n3) >= 0 && Number.IsPermutation(primes[i], n3))
                     {
                         return $"{primes[i]}{primes[j]}{n3}";
                     }

@@ -219,12 +219,12 @@ namespace ProjectEuler.Common
             return result;
         }
 
-        public static bool ArePermutations(int n1, int n2)
+        public static bool IsPermutation(int n1, int n2)
         {
             var digits = new int[10];
 
-            using (IEnumerator<int> enumerator1 = Number.GetAllDigits(n1).GetEnumerator(),
-                enumerator2 = Number.GetAllDigits(n2).GetEnumerator())
+            using (IEnumerator<int> enumerator1 = GetAllDigits(n1).GetEnumerator(),
+                enumerator2 = GetAllDigits(n2).GetEnumerator())
             {
                 while (enumerator1.MoveNext() && enumerator2.MoveNext())
                 {
