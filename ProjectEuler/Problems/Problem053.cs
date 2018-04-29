@@ -38,12 +38,7 @@ namespace ProjectEuler.Problems
 
         private static bool GetNumberOfSelections(int n, int r)
         {
-            BigInteger a = new BigInteger(1);
-
-            for (int i = r + 1; i <= n; i++)
-            {
-                a *= i;
-            }
+            var a = Factorial.GetFactorial(n, r + 1);
 
             var b = Factorial.GetFactorial(n - r);
 
