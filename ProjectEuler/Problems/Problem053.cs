@@ -22,7 +22,7 @@ namespace ProjectEuler.Problems
         {
             int count = 0;
 
-            for (int n = 1; n <= 100; n++)
+            for (int n = 23; n <= 100; n++)
             {
                 for (int r = 1; r <= n; r++)
                 {
