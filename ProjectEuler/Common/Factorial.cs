@@ -10,7 +10,7 @@ namespace ProjectEuler.Common
 
             for (int i = start; i <= number; i++)
             {
-                result *= new BigInteger(i);
+                result *= i;
             }
 
             return result;
