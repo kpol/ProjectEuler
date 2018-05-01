@@ -47,6 +47,7 @@
     <Compile Include="Common\EnumerableExtensions.cs" />
     <Compile Include="Common\Factorial.cs" />
     <Compile Include="Common\Fibonacci.cs" />
+    <Compile Include="Common\Matrix.cs" />
     <Compile Include="Common\Number.cs" />
     <Compile Include="Common\Prime.cs" />
     <Compile Include="Common\TriangleNumbers.cs" />

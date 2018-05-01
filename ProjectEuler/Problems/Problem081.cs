@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
@@ -11,7 +9,7 @@ namespace ProjectEuler.Problems
     {
         public override int Run()
         {
-            var matrix = GetMatrix();
+            var matrix = Matrix.GetMatrix(File.ReadAllText(@"Data\p081_matrix.txt"));
 
             var length = matrix.GetLength(0);
 
@@ -40,30 +38,6 @@ namespace ProjectEuler.Problems
             }
 
             return matrix[0,0];
-        }
-
-        private static int[,] GetMatrix()
-        {
-            var matrixString = File.ReadAllText(@"Data\p081_matrix.txt");
-
-            var lines = matrixString.Split(new[] {'\n'}, StringSplitOptions.RemoveEmptyEntries);
-
-            var array = new int[lines.Length, lines.Length];
-
-            for (int i = 0; i < lines.Length; i++)
-            {
-                var values = lines[i].Split(',').Select(int.Parse);
-
-                int j = 0;
-
-                foreach (var n in values)
-                {
-                    array[i, j] = n;
-                    j++;
-                }
-            }
-
-            return array;
         }
     }
 }
