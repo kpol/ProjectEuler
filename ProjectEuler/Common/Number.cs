@@ -132,6 +132,44 @@ namespace ProjectEuler.Common
             }
         }
 
+        public static ICollection<long> GetAllDivisors(long n, int[] primes)
+        {
+            var res = new List<long> { 1 };
+
+            if (n == 1)
+            {
+                return res;
+            }
+
+            foreach (var prime in primes)
+            {
+                if (prime > n)
+                {
+                    break;
+                }
+
+                if (n % prime != 0)
+                {
+                    continue;
+                }
+
+                var t = 1;
+                var tmp = new List<long>(res);
+
+                while (n % prime == 0)
+                {
+                    n /= prime;
+                    t *= prime;
+                    tmp.AddRange(res.Select(r => r * t));
+
+                }
+
+                res = tmp;
+            }
+
+            return res;
+        }
+
         public static int GetMax(int number1, int number2)
         {
             return number1 >= number2 ? number1 : number2;
