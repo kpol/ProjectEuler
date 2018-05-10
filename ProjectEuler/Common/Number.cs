@@ -126,7 +126,7 @@ namespace ProjectEuler.Common
                 }
             }
 
-            if (!onlyProperDivisors)
+            if (!onlyProperDivisors && number != 1)
             {
                 yield return number;
             }
