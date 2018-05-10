@@ -132,7 +132,7 @@ namespace ProjectEuler.Common
             }
         }
 
-        public static ICollection<long> GetAllDivisors(long n, int[] primes)
+        public static List<long> GetAllDivisors(long n, IEnumerable<int> primes)
         {
             var res = new List<long> { 1 };
 
