@@ -5,10 +5,11 @@ namespace ProjectEuler.Problems
 {
     public class Problem050 : Problem<ulong>
     {
-        // Consider the number 142857. We can right-rotate this number by moving the last digit (7) to the front of it, giving us 714285.
-        // It can be verified that 714285=5×142857.
-        // This demonstrates an unusual property of 142857: it is a divisor of its right-rotation.
-        // Find the last 5 digits of the sum of all integers n, 10 < n < 10^100, that have this property.
+        // The prime 41, can be written as the sum of six consecutive primes:
+        // 41 = 2 + 3 + 5 + 7 + 11 + 13
+        // This is the longest sum of consecutive primes that adds to a prime below one-hundred.
+        // The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
+        // Which prime, below one-million, can be written as the sum of the most consecutive primes?
 
         public override ulong Run()
         {
