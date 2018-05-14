@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
@@ -13,46 +14,37 @@ namespace ProjectEuler.Problems
 
         public override ulong Run()
         {
-            var primes = Prime.GetPrimeNumbers((int)1e6 - 1).ToList();
+            const int max = (int)1e6;
+
+            var primes = Prime.GetPrimeNumbers(max - 1).ToList();
+            var set = new HashSet<ulong>(primes);
 
             int maxSequenceCount = 0;
             ulong pr = 0;
-            for (int i = primes.Count - 1; i > 0; i--)
+
+            for (int i = 0; i < primes.Count - 2; i++)
             {
-                var prime = primes[i];
+                ulong sum = 0;
+                int count = 0;
 
-                int start = 0;
-
-                while (start < i - 1)
+                for (int j = i + 1; j < primes.Count - 1; j++)
                 {
-                    ulong sum = 0;
-                    var count = 0;
+                    sum += primes[j];
+                    count++;
 
-                    for (int j = start; j < i - 1; j++)
+                    if (sum > max)
                     {
-                        count++;
-                        sum += primes[j];
-
-                        if (sum == prime)
-                        {
-                            if (maxSequenceCount < count)
-                            {
-                                maxSequenceCount = count;
-                                pr = prime;
-                            }
-
-                            break;
-                        }
-
-                        if (sum > prime)
-                        {
-                            break;
-                        }
+                        break;
                     }
 
-                    start++;
+                    if (set.Contains(sum) && count > maxSequenceCount)
+                    {
+                        pr = sum;
+                        maxSequenceCount = count;
+                    }
                 }
             }
+
 
             return pr;
         }
