@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
@@ -32,7 +33,7 @@ namespace ProjectEuler.Problems
                     }
                     else
                     {
-                        matrix[i, j] += Number.GetMin(matrix[i + 1, j], matrix[i, j + 1]);
+                        matrix[i, j] += Math.Min(matrix[i + 1, j], matrix[i, j + 1]);
                     }
                 }
             }

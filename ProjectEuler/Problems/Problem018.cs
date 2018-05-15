@@ -1,5 +1,4 @@
 ﻿using System;
-using ProjectEuler.Common;
 
 namespace ProjectEuler.Problems
 {
@@ -35,7 +34,7 @@ namespace ProjectEuler.Problems
             {
                 for (int j = 0; j <= i; j++)
                 {
-                    triangle[i, j] += Number.GetMax(triangle[i + 1, j], triangle[i + 1, j + 1]);
+                    triangle[i, j] += Math.Max(triangle[i + 1, j], triangle[i + 1, j + 1]);
                 }
             }
 

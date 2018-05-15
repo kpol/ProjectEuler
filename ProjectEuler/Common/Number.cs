@@ -170,16 +170,6 @@ namespace ProjectEuler.Common
             return res;
         }
 
-        public static int GetMax(int number1, int number2)
-        {
-            return number1 >= number2 ? number1 : number2;
-        }
-
-        public static int GetMin(int number1, int number2)
-        {
-            return number1 <= number2 ? number1 : number2;
-        }
-
         public static ulong TruncateLeft(ulong number)
         {
             if (number < 10)
