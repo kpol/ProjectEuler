@@ -40,13 +40,29 @@ namespace ProjectEuler.Common
                 n = RotateRight(n);
             }
         }
-
-        public static bool IsPalindromic(long number)
+     
+        public static bool IsPalindrome(long n)
         {
-            var digits = GetAllDigits(number).ToList();
+            var divisor = (int)Math.Pow(10, (int)Math.Log10(n));
 
-            return IsPalindrome(digits);
+            while (n != 0)
+            {
+                var first = n / divisor;
+                var end = n % 10;
+
+                if (first != end)
+                {
+                    return false;
+                }
+
+                n = n % divisor / 10;
+
+                divisor /= 100;
+            }
+
+            return true;
         }
+
 
         public static IEnumerable<bool> GetBits(int number)
         {

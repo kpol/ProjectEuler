@@ -121,5 +121,19 @@ namespace ProjectEuler.Common
                 }
             }
         }
+
+        public static long SumLong(this IEnumerable<int> source)
+        {
+            if (source == null) throw new ArgumentNullException(nameof(source));
+
+            long sum = 0;
+
+            foreach (var i in source)
+            {
+                sum += i;
+            }
+
+            return sum;
+        }
     }
 }
