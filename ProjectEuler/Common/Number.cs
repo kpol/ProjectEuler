@@ -289,5 +289,18 @@ namespace ProjectEuler.Common
 
             return digits.All(d => d == 0);
         }
+
+        public static long Reverse(long number)
+        {
+            long result = 0;
+
+            while (number > 0)
+            {
+                result = result * 10 + number % 10;
+                number /= 10;
+            }
+
+            return result;
+        }
     }
 }
